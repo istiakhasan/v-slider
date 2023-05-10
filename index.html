@@ -152,7 +152,16 @@
     const unmute_btn = document.getElementsByClassName('unmute_btn')
     const mute_btn = document.getElementsByClassName('mute_btn')
     const carousel_item = document.getElementsByClassName('carousel-item')
-
+    setInterval(() => {
+      for (let index = 0; index < videos_parent.length; index++) {
+        const element = videos_parent[index];
+        if (!element.parentNode.parentNode.parentNode.classList.contains("active")) {
+          videos[index].muted = true
+          unmute_btn[index].classList.add('hide')
+          mute_btn[index].classList.remove('hide')
+        }
+      }
+    }, [1000])
     for (let i = 0; i < unmute_btn.length; i++) {
       unmute_btn[i].addEventListener('click', () => {
         videos[i].muted = true;
@@ -171,7 +180,7 @@
     for (let i = 0; i < pause_btn.length; i++) {
       pause_btn[i].addEventListener('click', () => {
         videos[i].pause()
-        videos_parent[i].classList.remove('hide')
+        mute_btn[i].classList.remove('hide')
         pause_btn[i].classList.add('hide')
       })
     }

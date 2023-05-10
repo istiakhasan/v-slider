@@ -65,7 +65,8 @@
       <div class="carousel-item  ">
 
         <video width="100%" height="100%" class="img-fluid box_video" autoplay loop muted>
-          <source  src="./Deora - Coke Studio Bangla - Season 2 - Pritom Hasan X Palakar X Ghaashphoring Choir X Fazlu Majhi.mp4"
+          <source
+            src="./Deora - Coke Studio Bangla - Season 2 - Pritom Hasan X Palakar X Ghaashphoring Choir X Fazlu Majhi.mp4"
             type="video/mp4" />
         </video>
 
@@ -87,7 +88,8 @@
       <div class="carousel-item  ">
 
         <video width="100%" height="100%" class="img-fluid box_video" autoplay loop muted>
-          <source  src="./Deora - Coke Studio Bangla - Season 2 - Pritom Hasan X Palakar X Ghaashphoring Choir X Fazlu Majhi.mp4"
+          <source
+            src="./Deora - Coke Studio Bangla - Season 2 - Pritom Hasan X Palakar X Ghaashphoring Choir X Fazlu Majhi.mp4"
             type="video/mp4" />
         </video>
 
@@ -150,40 +152,35 @@
     const unmute_btn = document.getElementsByClassName('unmute_btn')
     const mute_btn = document.getElementsByClassName('mute_btn')
     const carousel_item = document.getElementsByClassName('carousel-item')
-    console.log(unmute_btn, "unmute");
 
-    for (let i = 0; i < videos.length; i++) {
-      const isActive = carousel_item[i].classList.contains('active')
-      if (!isActive) {
-        carousel_item[i].childNodes[1].muted = true
-      }
-      console.log(isActive, "", videos[i].classList)
+    for (let i = 0; i < unmute_btn.length; i++) {
+      unmute_btn[i].addEventListener('click', () => {
+        videos[i].muted = true;
+        mute_btn[i].classList.remove('hide')
+        unmute_btn[i].classList.add('hide')
+      })
+    }
+
+    for (let i = 0; i < videos_parent.length; i++) {
       videos_parent[i].addEventListener('click', () => {
         videos[i].play()
         videos_parent[i].classList.add('hide')
         pause_btn[i].classList.remove('hide')
       })
+    }
+    for (let i = 0; i < pause_btn.length; i++) {
       pause_btn[i].addEventListener('click', () => {
         videos[i].pause()
         videos_parent[i].classList.remove('hide')
         pause_btn[i].classList.add('hide')
       })
+    }
+    for (let i = 0; i < mute_btn.length; i++) {
       mute_btn[i].addEventListener('click', () => {
-        console.log("click", mute_btn[i], unmute_btn[i]);
         videos[i].muted = false;
-        console.log(videos[i].muted);
         mute_btn[i].classList.add('hide')
         unmute_btn[i].classList.remove('hide')
       })
-      unmute_btn[i].addEventListener('click', () => {
-        videos[i].muted = true;
-        mute_btn[i].classList.remove('hide')
-        unmute_btn[i].classList.add('hide')
-
-      })
-
-
-
 
     }
   </script>

@@ -36,7 +36,7 @@
       <!-- Single item -->
       <div class="carousel-item active ">
 
-        <video width="100%" height="100%" class="img-fluid box_video " autoplay loop muted>
+        <video width="100%"  class="img-fluid box_video " autoplay loop muted>
           <!-- <source src="https://mdbcdn.b-cdn.net/img/video/Tropical.mp4" type="video/mp4" /> -->
           <source
             src="./Deora - Coke Studio Bangla - Season 2 - Pritom Hasan X Palakar X Ghaashphoring Choir X Fazlu Majhi.mp4"
@@ -64,7 +64,7 @@
       </div>
       <div class="carousel-item  ">
 
-        <video width="100%" height="100%" class="img-fluid box_video" autoplay loop muted>
+        <video width="100%"  class="img-fluid box_video" autoplay loop muted>
           <source
             src="./Deora - Coke Studio Bangla - Season 2 - Pritom Hasan X Palakar X Ghaashphoring Choir X Fazlu Majhi.mp4"
             type="video/mp4" />
@@ -87,7 +87,7 @@
       </div>
       <div class="carousel-item  ">
 
-        <video width="100%" height="100%" class="img-fluid box_video" autoplay loop muted>
+        <video width="100%"  class="img-fluid box_video" autoplay loop muted>
           <source
             src="./Deora - Coke Studio Bangla - Season 2 - Pritom Hasan X Palakar X Ghaashphoring Choir X Fazlu Majhi.mp4"
             type="video/mp4" />
@@ -149,6 +149,7 @@
     const videos = document.getElementsByClassName('box_video')
     const videos_parent = document.getElementsByClassName('video_parent')
     const pause_btn = document.getElementsByClassName('pause_btn')
+    const play_btn = document.getElementsByClassName('play_btn')
     const unmute_btn = document.getElementsByClassName('unmute_btn')
     const mute_btn = document.getElementsByClassName('mute_btn')
     const carousel_item = document.getElementsByClassName('carousel-item')
@@ -180,7 +181,7 @@
     for (let i = 0; i < pause_btn.length; i++) {
       pause_btn[i].addEventListener('click', () => {
         videos[i].pause()
-        mute_btn[i].classList.remove('hide')
+        videos_parent[i].classList.remove('hide')
         pause_btn[i].classList.add('hide')
       })
     }

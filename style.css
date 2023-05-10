@@ -5,7 +5,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 450px !important;
+  height: 550px !important;
 }
 
 .carousel-caption {
@@ -48,6 +48,7 @@
   height: 60px;
   cursor: pointer;
   opacity: 0.4;
+  background: rgba(247, 238, 238, 0.5);
 }
 .unmute_btn,
 .mute_btn {
@@ -102,7 +103,18 @@
   padding: 4px;
   border-radius: 4px;
 }
+video {
+  position: absolute !important;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  object-fit: fill;
 
+}
+.img-fluid.box_video{
+  height: -webkit-fill-available !important;
+}
 @media only screen and (max-width: 800px) {
   .carousel-inner {
     height: auto !important;
